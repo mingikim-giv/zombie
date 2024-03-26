@@ -2,12 +2,24 @@ package zombie;
 
 public class Hero extends Unit {
 	private int power;	// 파워
+	private int cnt;
 	
-	
-	public Hero(int position, int hp, int maxPower) {
+	public Hero(int position, int hp, int maxPower, int cnt) {
 		super(position, hp, maxPower);
+		this.cnt = cnt;
 	}
-
+	
+	public void recovery() {
+		if(cnt > 0) {
+			setHp(getHp() + 50);
+			System.out.printf("물약 사용 [HP:%d]\n", getHp());
+			cnt --;
+		}
+		else if(cnt == 0) {
+			System.err.println("물약이 없습니다.");
+		}
+	}
+	
 	@Override
 	public void attack(Unit enemy) {
 		
