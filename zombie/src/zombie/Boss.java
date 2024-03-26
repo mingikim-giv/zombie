@@ -31,7 +31,7 @@ public class Boss extends Unit {
 			}
 			
 			System.out.printf("보스가 %d의 파워로 공격!\n", power);
-			System.out.printf("영웅[HP: %d]\n", hero.getHp());
+			System.out.printf("HERO[HP: %d]\n", hero.getHp());
 		}
 		else {
 			System.out.println("보스 기본 공격!");
@@ -44,7 +44,7 @@ public class Boss extends Unit {
 			}
 			
 			System.out.printf("보스가 %d의 파워로 공격!\n", power);
-			System.out.printf("영웅[HP: %d]\n", hero.getHp());
+			System.out.printf("HERO[HP: %d]\n", hero.getHp());
 		}
 	}
 	
