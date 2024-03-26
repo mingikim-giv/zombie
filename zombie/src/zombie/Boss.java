@@ -11,8 +11,8 @@ public class Boss extends Unit {
 		return this.protective;
 	}
 	
-	public void setProtective(int protective) {
-		this.protective = protective;
+	public void setProtective(int value) {
+		this.protective = value;
 	}
 	
 	@Override
