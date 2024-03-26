@@ -8,12 +8,12 @@ abstract public class Unit {
 	
 	private int hp;				// 체력
 	private int position;		// 위치
-	int maxHp;					// 최대 체력
+	int maxPower;					// 최대 파워
 	
-	public Unit(int position, int hp, int maxHp) {
+	public Unit(int position, int hp, int maxPower) {
 		this.position = position;
 		this.hp = hp;
-		this.maxHp = maxHp;
+		this.maxPower = maxPower;
 		ran = new Random();
 	}
 	
@@ -24,7 +24,7 @@ abstract public class Unit {
 		return this.hp;
 	}
 	public int getMaxHp() {
-		return this.maxHp;
+		return this.maxPower;
 	}
 	
 	public void setPosition(int position) {
