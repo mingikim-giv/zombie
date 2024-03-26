@@ -1,7 +1,7 @@
 package zombie;
 
 public class Hero extends Unit {
-	private int power;	// 파워
+	private int power;		// 파워
 	private int portion;	// 물약
 	
 	public Hero(int position, int hp, int maxPower, int portion) {
