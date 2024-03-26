@@ -86,7 +86,7 @@ public class Game {
 					break;
 				}
 				
-				if(boss.getHp() <= 0) {
+				if(middleBoss.getHp() <= 0) {
 					System.out.println("MIDDLE_BOSS DIE.. STAGE CLEAR");
 					break;
 				}
