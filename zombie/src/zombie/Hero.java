@@ -4,8 +4,8 @@ public class Hero extends Unit {
 	private int power;	// 파워
 	
 	
-	public Hero(int position, int hp, int maxHp) {
-		super(position, hp, maxHp);
+	public Hero(int position, int hp, int maxPower) {
+		super(position, hp, maxPower);
 	}
 
 	@Override
@@ -13,7 +13,7 @@ public class Hero extends Unit {
 		
 		if(enemy instanceof Boss) {
 			Boss boss = (Boss) enemy;
-			power = ran.nextInt(maxHp);
+			power = ran.nextInt(maxPower);
 			int bossP = boss.getArmor() - power;
 			int bossH = boss.getHp() - power;
 			
@@ -37,7 +37,7 @@ public class Hero extends Unit {
 			System.out.printf("BOSS[HP: %d/ARMOR: %d]\n", boss.getHp(), boss.getArmor());
 		}
 		else {
-			power = ran.nextInt(maxHp);
+			power = ran.nextInt(maxPower);
 			enemy.setHp(enemy.getHp() - power);
 			
 			if(enemy.getHp() <= 0) {

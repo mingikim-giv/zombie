@@ -3,8 +3,8 @@ package zombie;
 public class Boss extends Unit {
 	private int armor;	// 보호막
 	
-	public Boss(int position, int hp, int maxHp, int armor) {
-		super(position, hp, maxHp);
+	public Boss(int position, int hp, int maxPower, int armor) {
+		super(position, hp, maxPower);
 		this.armor = armor;
 	}
 	
@@ -22,7 +22,7 @@ public class Boss extends Unit {
 		
 		if(intensive == 1) {
 			System.out.println("보스 필살기 발동!");
-			int power = (ran.nextInt(maxHp)+1) * 2;
+			int power = (ran.nextInt(maxPower)+1) * 2;
 			int damage = hero.getHp() - power;
 			hero.setHp(damage);
 			
@@ -35,7 +35,7 @@ public class Boss extends Unit {
 		}
 		else {
 			System.out.println("보스 기본 공격!");
-			int power = ran.nextInt(maxHp)+1;
+			int power = ran.nextInt(maxPower)+1;
 			int damage = hero.getHp() - power;
 			hero.setHp(damage);
 			
