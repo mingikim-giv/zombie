@@ -8,7 +8,7 @@ abstract public class Unit {
 	
 	private int hp;				// 체력
 	private int position;		// 위치
-	private int maxHp;			// 최대 체력
+	int maxHp;					// 최대 체력
 	
 	public Unit(int position, int hp, int maxHp) {
 		this.position = position;
@@ -39,5 +39,6 @@ abstract public class Unit {
 			System.out.printf("[현재 위치]: %d\n", position);
 		}
 	}
+	
 	abstract void attack(Unit unit);
 }
