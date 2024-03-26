@@ -2,20 +2,20 @@ package zombie;
 
 public class Hero extends Unit {
 	private int power;	// 파워
-	private int cnt;
+	private int portion;	// 물약
 	
-	public Hero(int position, int hp, int maxPower, int cnt) {
+	public Hero(int position, int hp, int maxPower, int portion) {
 		super(position, hp, maxPower);
-		this.cnt = cnt;
+		this.portion = portion;
 	}
 	
 	public void recovery() {
-		if(cnt > 0) {
+		if(portion > 0) {
 			setHp(getHp() + 50);
 			System.out.printf("물약 사용 [HP:%d]\n", getHp());
-			cnt --;
+			portion --;
 		}
-		else if(cnt == 0) {
+		else if(portion == 0) {
 			System.err.println("물약이 없습니다.");
 		}
 	}
