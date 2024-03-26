@@ -10,22 +10,25 @@ public class Game {
 	
 	private final int HERO = 1;
 	private final int ZOMBIE = 5;
-	private final int BOSS = 15;
+	private final int MIDDLE_BOSS = 12;
+	private final int BOSS = 18;
 	private final int FINISH = 20;
 	
 	private final int ATTACK = 1;
 	private final int HILL = 2;
 	
 	private Hero hero;
-	private Boss boss;
 	private Zombie zombie;
+	private MiddleBoss middleBoss;
+	private Boss boss;
 	
 	private int position;	// 위치
 	
 	private Game() {
-		hero = new Hero(HERO, 200, 40, 5);
+		hero = new Hero(HERO, 300, 40, 5);
 		zombie = new Zombie(ZOMBIE, 100, 10);
-		boss = new Boss(BOSS, 300, 50, 100);
+		middleBoss = new MiddleBoss(MIDDLE_BOSS, 200, 20);
+		boss = new Boss(BOSS, 400, 40, 100);
 		position = 1;
 	}
 	
@@ -72,6 +75,24 @@ public class Game {
 			}
 		}
 		
+		if(hero.getPosition() == MIDDLE_BOSS) {
+			System.out.println("중간 보스 등장! 싸워보자!!");
+			while(true) {
+				System.out.println("공격하기[1]/물약사용[2]");
+				middleBossSection(inputNumber("메뉴 선택"));
+				
+				if(hero.getHp() <= 0) {
+					System.err.println("HERO DIE.. STAGE FAIL");
+					break;
+				}
+				
+				if(boss.getHp() <= 0) {
+					System.out.println("MIDDLE_BOSS DIE.. STAGE CLEAR");
+					break;
+				}
+			}
+		}
+		
 		if(hero.getPosition() == BOSS) {
 			System.out.println("보스 등장! 싸워보자!!");
 			while(true) {
@@ -101,6 +122,18 @@ public class Game {
 			zombie.attack(hero);
 			
 			hero.attack(zombie);
+		}
+		else if(sel == HILL) {
+			hero.recovery();
+		}
+	}
+	
+	// middleBossSection
+	private void middleBossSection(int sel) {
+		if(sel == ATTACK) {
+			middleBoss.attack(hero);
+			
+			hero.attack(middleBoss);
 		}
 		else if(sel == HILL) {
 			hero.recovery();
