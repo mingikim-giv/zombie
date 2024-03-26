@@ -23,7 +23,7 @@ public class Game {
 	private int position;	// 위치
 	
 	private Game() {
-		hero = new Hero(HERO, 200, 30, 5);
+		hero = new Hero(HERO, 200, 40, 5);
 		zombie = new Zombie(ZOMBIE, 100, 10);
 		boss = new Boss(BOSS, 300, 50, 100);
 		position = 1;
@@ -35,7 +35,7 @@ public class Game {
 	}
 	
 	// print
-	public void print() {
+	private void print() {
 		System.out.printf("[STAGE %d]\n", position);
 		System.out.println("이동하기[1]/종료하기[2]");
 	}
@@ -56,14 +56,38 @@ public class Game {
 	private void move() {
 		if(hero.getPosition() == ZOMBIE) {
 			System.out.println("좀비 등장! 싸워보자!!");
-			System.out.println("공격하기[1]/물약사용[2]");
-			zombieSection(inputNumber("메뉴 선택"));
+			while(true) {
+				System.out.println("공격하기[1]/물약사용[2]");
+				zombieSection(inputNumber("메뉴 선택"));
+				
+				if(hero.getHp() <= 0) {
+					System.err.println("HERO DIE.. STAGE FAIL");
+					break;
+				}
+				
+				if(zombie.getHp() <= 0) {
+					System.out.println("ZOMBIE DIE.. STAGE CLEAR");
+					break;
+				}
+			}
 		}
 		
 		if(hero.getPosition() == BOSS) {
 			System.out.println("보스 등장! 싸워보자!!");
-			System.out.println("공격하기[1]/물약사용[2]");
-			bossSection(inputNumber("메뉴 선택"));
+			while(true) {
+				System.out.println("공격하기[1]/물약사용[2]");
+				bossSection(inputNumber("메뉴 선택"));
+				
+				if(hero.getHp() <= 0) {
+					System.err.println("HERO DIE.. STAGE FAIL");
+					break;
+				}
+				
+				if(boss.getHp() <= 0) {
+					System.out.println("BOSS DIE.. STAGE CLEAR");
+					break;
+				}
+			}
 		}
 		
 		if(hero.getPosition() == FINISH) {
@@ -81,45 +105,23 @@ public class Game {
 		else if(sel == HILL) {
 			hero.recovery();
 		}
-		
-		if(hero.getHp() <= 0) {
-			System.err.println("HERO DIE.. STAGE FAIL");
-			return;
-		}
-		
-		if(zombie.getHp() <= 0) {
-			System.out.println("ZOMBIE DIE.. STAGE CLEAR");
-			return;
-		}
 	}
 	
 	// bossSection
 	private void bossSection(int sel) {
-		while(true) {
-			if(sel == ATTACK) {
-				boss.attack(hero);
-				
-				hero.attack(zombie);
-			}
-			else if(sel == HILL) {
-				hero.recovery();
-			}
+		if(sel == ATTACK) {
+			boss.attack(hero);
 			
-			if(hero.getHp() <= 0) {
-				System.err.println("HERO DIE.. STAGE FAIL");
-				break;
-			}
-			
-			if(boss.getHp() <= 0) {
-				System.out.println("BOSS DIE.. STAGE CLEAR");
-				break;
-			}
+			hero.attack(boss);
+		}
+		else if(sel == HILL) {
+			hero.recovery();
 		}
 	}
 	
 	// isEnd
 	private boolean isEnd() {
-		return hero.getPosition() <= FINISH; 
+		return hero.getPosition() < FINISH; 
 	}
 	
 	// inputNumber
