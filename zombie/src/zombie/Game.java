@@ -1,11 +1,9 @@
 package zombie;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
 	private Scanner scan = new Scanner(System.in);
-	private Random ran = new Random();
 	
 	private final int MOVE = 1;
 	private final int END = 2;
@@ -75,25 +73,23 @@ public class Game {
 	
 	// zombieSection
 	private void zombieSection(int sel) {
-		while(true) {
-			if(sel == ATTACK) {
-				zombie.attack(hero);
-				
-				hero.attack(zombie);
-			}
-			else if(sel == HILL) {
-				hero.recovery();
-			}
+		if(sel == ATTACK) {
+			zombie.attack(hero);
 			
-			if(hero.getHp() <= 0) {
-				System.err.println("HERO DIE.. STAGE FAIL");
-				break;
-			}
-			
-			if(zombie.getHp() <= 0) {
-				System.out.println("ZOMBIE DIE.. STAGE CLEAR");
-				break;
-			}
+			hero.attack(zombie);
+		}
+		else if(sel == HILL) {
+			hero.recovery();
+		}
+		
+		if(hero.getHp() <= 0) {
+			System.err.println("HERO DIE.. STAGE FAIL");
+			return;
+		}
+		
+		if(zombie.getHp() <= 0) {
+			System.out.println("ZOMBIE DIE.. STAGE CLEAR");
+			return;
 		}
 	}
 	
@@ -120,6 +116,12 @@ public class Game {
 			}
 		}
 	}
+	
+	// isEnd
+	private boolean isEnd() {
+		return hero.getPosition() <= FINISH; 
+	}
+	
 	// inputNumber
 	private int inputNumber(String message) {
 		int number = -1;
@@ -136,7 +138,7 @@ public class Game {
 	}
 	
 	public void run() {
-		while(true) {
+		while(isEnd()) {
 			print();
 			runMenu(inputNumber("메뉴 선택"));
 		}
