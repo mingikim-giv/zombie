@@ -36,7 +36,7 @@ abstract public class Unit {
 	
 	public void move() {
 		if(position <= SIZE) {
-			System.out.printf("[현재 위치]: %d\n", position);
+			System.out.printf("[STAGE %d]\n", position);
 		}
 	}
 	
