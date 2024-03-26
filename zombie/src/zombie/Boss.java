@@ -7,11 +7,11 @@ public class Boss extends Unit {
 		super(position, hp, maxHp);
 	}
 	
-	public int getProtective() {
+	public int getArmor() {
 		return this.armor;
 	}
 	
-	public void setProtective(int value) {
+	public void setArmor(int value) {
 		this.armor = value;
 	}
 	
