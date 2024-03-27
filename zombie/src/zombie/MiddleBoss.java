@@ -2,11 +2,21 @@ package zombie;
 
 public class MiddleBoss extends Zombie {
 	private int power;	// 파워
+	private int skill;	// 스킬
 	
-	public MiddleBoss(int position, int hp, int maxPower) {
+	public MiddleBoss(int position, int hp, int maxPower, int skill) {
 		super(position, hp, maxPower);
+		this.skill = skill;
 	}
-
+	
+	public int getSkill() {
+		return this.skill;
+	}
+	
+	public void setSkill(int skill) {
+		this.skill = skill;
+	}
+	
 	@Override
 	public void attack(Unit hero) {
 		power = ran.nextInt(maxPower);
