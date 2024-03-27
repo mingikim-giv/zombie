@@ -1,6 +1,6 @@
 package zombie;
 
-public class Boss extends Unit {
+public class Boss extends Zombie {
 	private int armor;	// 보호막
 	
 	public Boss(int position, int hp, int maxPower, int armor) {
