@@ -1,6 +1,6 @@
 package zombie;
 
-public class Boss extends Zombie {
+public class Boss extends MiddleBoss {
 	private int armor;	// 보호막
 	
 	public Boss(int position, int hp, int maxPower, int armor) {
@@ -47,6 +47,5 @@ public class Boss extends Zombie {
 			System.out.printf("HERO[HP: %d]\n", hero.getHp());
 		}
 	}
-	
 	
 }
