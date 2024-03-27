@@ -1,6 +1,6 @@
 package zombie;
 
-public class MiddleBoss extends Unit {
+public class MiddleBoss extends Zombie {
 	private int power;	// 파워
 	
 	public MiddleBoss(int position, int hp, int maxPower) {
