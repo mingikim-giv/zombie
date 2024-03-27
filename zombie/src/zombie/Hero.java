@@ -48,16 +48,6 @@ public class Hero extends Unit {
 			System.out.printf("영웅이 %d의 파워로 공격\n", power);
 			System.out.printf("BOSS[HP: %d/ARMOR: %d]\n", boss.getHp(), boss.getArmor());
 		}
-		else if(enemy instanceof Zombie) {
-			power = ran.nextInt(maxPower);
-			enemy.setHp(enemy.getHp() - power);
-			
-			if(enemy.getHp() <= 0) {
-				enemy.setHp(0);
-			}
-			System.out.printf("영웅이 %d의 파워로 공격\n", power);
-			System.out.printf("ZOMBIE[HP: %d]\n", enemy.getHp());
-		}
 		else if(enemy instanceof MiddleBoss) {
 			power = ran.nextInt(maxPower);
 			enemy.setHp(enemy.getHp() - power);
@@ -67,6 +57,16 @@ public class Hero extends Unit {
 			}
 			System.out.printf("영웅이 %d의 파워로 공격\n", power);
 			System.out.printf("MiddleBoss[HP: %d]\n", enemy.getHp());
+		}
+		else if(enemy instanceof Zombie) {
+			power = ran.nextInt(maxPower);
+			enemy.setHp(enemy.getHp() - power);
+			
+			if(enemy.getHp() <= 0) {
+				enemy.setHp(0);
+			}
+			System.out.printf("영웅이 %d의 파워로 공격\n", power);
+			System.out.printf("ZOMBIE[HP: %d]\n", enemy.getHp());
 		}
 	}
 
