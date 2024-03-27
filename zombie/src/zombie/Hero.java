@@ -11,7 +11,7 @@ public class Hero extends Unit {
 	
 	public void recovery() {
 		if(portion > 0) {
-			setHp(getHp() + 50);
+			setHp(getHp() + 100);
 			System.out.printf("물약 사용 [HP:%d]\n", getHp());
 			portion --;
 		}
