@@ -25,10 +25,10 @@ public class Game {
 	private int position;	// 위치
 	
 	private Game() {
-		hero = new Hero(HERO, 300, 40, 5);
-		zombie = new Zombie(ZOMBIE, 100, 10);
-		middleBoss = new MiddleBoss(MIDDLE_BOSS, 200, 20, 100);
-		boss = new Boss(BOSS, 400, 40, 100, 100);
+		hero = new Hero(HERO, 400, 40, 10);						// 위치/체력/공격력/포션개수
+		zombie = new Zombie(ZOMBIE, 100, 10);					// 위치/체력/공격력
+		middleBoss = new MiddleBoss(MIDDLE_BOSS, 300, 30, 100); // 위치/체력/공격력/스킬발동
+		boss = new Boss(BOSS, 500, 50, 100, 100);				// 위치/체력/공격력/아머/스킬발동
 		position = 1;
 	}
 	
