@@ -28,4 +28,4 @@
 <img src = "https://github.com/mingikim-giv/zombie/blob/master/images/%EC%A2%80%EB%B9%84%EA%B2%8C%EC%9E%84.jpg?raw=true" width = "300" heigth = "300">
 
 > Demo
-<img src = "https://github.com/mingikim-giv/zombie/blob/master/images/%EC%A2%80%EB%B9%84%20%EA%B2%8C%EC%9E%84(GIF).gif?raw=true" width = "400" heigth = "400">
+<img src = "https://github.com/mingikim-giv/zombie/blob/master/images/%EC%A2%80%EB%B9%84%20%EA%B2%8C%EC%9E%84(GIF).gif?raw=true" width = "300" heigth = "300">
