@@ -7,28 +7,5 @@
 
 > Class Diagram(UML)
 ![diagram](https://github.com/mingikim-giv/zombie/blob/master/images/%EC%A2%80%EB%B9%84%EA%B2%8C%EC%9E%84.jpg?raw=true)
-
+<img src ="https://github.com/mingikim-giv/zombie/blob/master/images/%EC%A2%80%EB%B9%84%EA%B2%8C%EC%9E%84.jpg?raw=true" width="200">
 > Demo 
-
-
-
-* 목록
-  * 항목1
-  * 항목2
-* 목록2
-  * 항목1
-  * 항목2
-
-1. 목록3
-  1. 항목1
-  2. 항목2
-
-텍스트
-*텍스트*  <br>
-**텍스트** <br>
-***텍스트*** <br>
-
-[링크](https://github.com/mingikim-giv/zombie/new/master?filename=README.md)
-
-![루피](https://yt3.googleusercontent.com/HAW0DwztaccF_6W1XxhAtiYp2kXDTidmTzqoHnmgN-tGzEX9JHxAdBb1XtxHhSuRC5R4sNA2=s900-c-k-c0x00ffffff-no-rj)
-<img src="https://yt3.googleusercontent.com/HAW0DwztaccF_6W1XxhAtiYp2kXDTidmTzqoHnmgN-tGzEX9JHxAdBb1XtxHhSuRC5R4sNA2=s900-c-k-c0x00ffffff-no-rj" width="100">
