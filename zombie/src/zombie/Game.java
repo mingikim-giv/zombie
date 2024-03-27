@@ -27,8 +27,8 @@ public class Game {
 	private Game() {
 		hero = new Hero(HERO, 300, 40, 5);
 		zombie = new Zombie(ZOMBIE, 100, 10);
-		middleBoss = new MiddleBoss(MIDDLE_BOSS, 200, 20);
-		boss = new Boss(BOSS, 400, 40, 100);
+		middleBoss = new MiddleBoss(MIDDLE_BOSS, 200, 20, 100);
+		boss = new Boss(BOSS, 400, 40, 100, 100);
 		position = 1;
 	}
 	
