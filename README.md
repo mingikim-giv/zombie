@@ -6,7 +6,7 @@
 게임에 대한 컨셉 및 플레이 설명
 
 > Class Diagram(UML)
-![diagram]()
+![diagram](https://github.com/mingikim-giv/zombie/blob/master/images/%EC%A2%80%EB%B9%84%EA%B2%8C%EC%9E%84.jpg?raw=true)
 
 > Demo 
 
